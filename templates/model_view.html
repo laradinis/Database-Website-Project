@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disney+  Database</title>
+    <link rel="stylesheet" href="/static/disney.css">
+</head>
+<body>
+<div class="glitter-background"></div>
+
+<div class="topbar">
+    <div class="disney-title">
+        <h1>Disney+ Database</h1>
+    </div>
+    <div class="menu">
+        <a href="{{ url_for('index') }}#info" class="table-card-btn">Voltar</a>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 140px;"> <h2>{{ title }}</h2>
+
+    <div class="image-container">
+        <h3 style="font-family: 'Waltograph', cursive; font-size: 2.5em; color: #88aaff; text-align: center; margin-bottom: 20px; text-shadow: 0 0 6px rgba(136, 170, 255, 0.7);">
+            {{ model_name }}
+        </h3>
+        <img src="{{ image_filename }}" alt="{{ title }}">
+    </div>
+</div>
+
+</body>
+</html>

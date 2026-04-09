@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disney+  Database</title>
+    <link rel="stylesheet" href="/static/disney.css">
+</head>
+<body>
+    <div class="glitter-background"></div>
+
+<div class="topbar">
+    <div class="disney-title">
+        <h1>Disney+ Database</h1>
+    </div>
+    <div class="menu">
+        <a href="#info">Informações</a>
+        <a href="#colunas">Tabelas</a>
+        <a href="#questoes">Questões</a>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 140px;">
+
+    <section id="info" class="section">
+        <h2>Informações da Base de Dados</h2>
+        <div class="info-cards">
+            <div class="info-card static-card">
+                <h3>Total de Tabelas</h3>
+                <p>{{ stats.total_tables }}</p>
+            </div>
+            <div class="info-card static-card">
+                <h3>Total de Colunas</h3>
+                <p>{{ stats.total_columns }}</p>
+            </div>
+            <div class="info-card static-card">
+                <h3>Total de Registos</h3>
+                <p>{{ stats.total_rows }}</p>
+            </div>
+
+            <a href="{{ url_for('relational_model') }}" class="info-card" style="display:flex; justify-content:center; align-items:center; cursor:pointer; text-decoration: none;">
+                <h3>Modelo Relacional</h3>
+            </a>
+            <a href="{{ url_for('er_model') }}" class="info-card" style="display:flex; justify-content:center; align-items:center; cursor:pointer; text-decoration: none;">
+                <h3>Modelo ER</h3>
+            </a>
+            
+        </div>
+    </section>
+
+    <section id="colunas" class="section">
+        <h2>Tabelas</h2>
+        <div class="table-grid">
+            {% for detail in stats.table_details %}
+            <a href="{{ url_for('list_records', table_name=detail.name) }}" class="table-card">
+                <h3>{{ detail.name | capitalize }}</h3>
+                <p>Colunas: {{ detail.cols }}</p>
+                <p>Registos: {{ detail.rows }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="questoes" class="section">
+        <h2>Questões Temáticas</h2>
+        <div class="questions-vertical">
+            {% for name, endpoint in queries %}
+            <a href="{{ url_for(endpoint) }}" class="question-card">{{ name }}</a>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>

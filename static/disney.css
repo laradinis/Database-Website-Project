@@ -1,0 +1,410 @@
+/*este ficheiro serve para guardar o estilo de todas as páginas do site (tema Disney)*/
+@font-face {
+    font-family: 'Waltograph';
+    src: url('/static/fonts/waltograph42.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Corpo da página */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #0d0033 0%, #1a004d 100%); /* mais azul escuro */
+    color: #9bb0ff;
+}
+
+/* Barra superior */
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(90deg, #0d0033, #1a004d);
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    box-shadow: 0 0 15px rgba(80, 120, 255, 0.3); /* leve glow azul */
+    z-index: 100;
+}
+
+/* Título Disney maior, brilho leve */
+.disney-title h1 {
+    font-family: 'Waltograph', cursive;
+    font-size: 2.5em;
+    color: #88aaff;
+    font-weight: 400;
+    text-shadow: 0 0 3px rgba(136, 170, 255, 0.4); /* brilho leve azul */
+    margin: 0;
+}
+
+/* Menu sem caixas gigantes */
+.menu {
+    display: flex;
+    gap: 50px; /* espaçamento entre os links */
+    margin-left: 50px;
+    align-items: center; /* centraliza verticalmente */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #a0c0ff;          /* cor azul carregada */
+    font-weight: 700;         /* negrito */
+    font-size: 1.3em;
+    letter-spacing: 1.5px;    /* espaçamento entre letras */
+    padding: 5px 0;           /* centraliza verticalmente sem criar caixa */
+    transition: color 0.2s, text-shadow 0.3s;
+    text-shadow: 0 0 6px rgba(160, 192, 255, 0.7); /* brilho azul suave ao redor */
+}
+
+.menu a:hover {
+    color: #88aaff;
+    text-shadow: 0 0 12px rgba(136, 170, 255, 1); /* brilho mais intenso ao passar o mouse */
+}
+
+/* Container centralizado */
+.container {
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Seções */
+.section {
+    padding: 60px 30px;
+    margin-bottom: 100px;
+    background: rgba(10, 10, 60, 0.85); /* mais azul escuro */
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Títulos Disney das seções */
+h2 {
+    font-family: 'Waltograph', cursive;
+    font-size: 3em;
+    color: #88aaff;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 0 2px rgba(136, 170, 255, 0.35); /* brilho leve azul */
+    letter-spacing: 2px;
+}
+
+/* Cards de informação */
+.info-cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center; /* Centraliza a linha de cima (3) e a linha de baixo (2) */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Permite que os cartões 4 e 5 quebrem para a linha de baixo */
+}
+
+.info-card {
+    /* CORREÇÃO: Aumento do tamanho base para forçar o layout 3/2 e garantir tamanho igual */
+    flex: 0 0 250px; 
+    
+    background: rgba(0, 15, 60, 0.9); /* fundo azul escuro */
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    color: #88aaff; /* cor igual ao brilho azul */
+    font-weight: 400;
+    font-size: 1.2em;
+    box-shadow: 0 0 25px rgba(136, 170, 255, 0.9); /* brilho neon compacto azul */
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(136, 170, 255, 1); /* brilho neon ao hover */
+}
+
+.info-card h3 {
+    font-family: 'Waltograph', cursive;
+    font-size: 1.8em;
+    color: #88aaff;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    text-shadow: 0 0 6px rgba(136, 170, 255, 0.7);
+}
+
+/* NOVO: Classe para remover o efeito de hover dos cartões de estatísticas */
+.static-card:hover {
+    transform: none; /* remove o aumento/escala */
+    box-shadow: 0 0 25px rgba(136, 170, 255, 0.9); /* mantém o brilho estático original */
+}
+
+/* Grid de tabelas */
+.table-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.table-card {
+    display: block;
+    width: 180px;
+    padding: 20px;
+    background: rgba(0, 15, 60, 0.9); /* fundo azul escuro */
+    border-radius: 12px;
+    color: #88aaff; /* texto igual ao brilho */
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(136, 170, 255, 0.9); /* brilho neon compacto azul */
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.table-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 45px rgba(136, 170, 255, 1); /* brilho neon ao hover */
+}
+
+.table-card h3 {
+    font-family: 'Waltograph', cursive;
+    font-size: 1.7em;
+    color: #88aaff;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    text-shadow: 0 0 6px rgba(136, 170, 255, 0.7);
+}
+
+/* Questões vertical */
+.questions-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.question-card {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px 30px;
+    background: rgba(0, 15, 60, 0.9); /* fundo azul escuro */
+    color: #88aaff;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    box-shadow: 0 0 25px rgba(136, 170, 255, 0.9); /* brilho neon compacto azul */
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.question-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 45px rgba(136, 170, 255, 1); /* brilho neon ao hover */
+}
+
+/* Estilos para a Tabela de Dados que substitui a lista de cartões */
+
+.table-container {
+    overflow-x: auto; 
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    
+    /* Brilho suave em torno do container da tabela */
+    box-shadow:
+        0 0 5px #00aaff,
+        0 0 10px rgba(102, 204, 255, 0.5); 
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+    color: #cce0ff;
+    font-size: 1em;
+}
+
+.data-table thead th {
+    background: #003366; 
+    color: #fff;
+    padding: 15px 10px;
+    border: 1px solid #00aaff;
+    
+    text-shadow: 0 0 5px #00aaff;
+}
+
+.data-table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: rgba(0, 20, 80, 0.7);
+}
+
+.data-table tbody tr:nth-child(odd) {
+    background: rgba(0, 20, 80, 0.8);
+}
+
+.data-table tbody tr:hover {
+    background: rgba(0, 40, 100, 0.9);
+    box-shadow: inset 0 0 10px rgba(102, 204, 255, 0.3);
+}
+
+.data-table tbody td {
+    padding: 12px 10px;
+    border: 1px solid #002b5c;
+}
+
+/* Estilo para o botão de detalhes dentro da tabela */
+.btn-small {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+
+/*glitterrrr*/
+/* Container */
+.glitter-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Função de gerar glitter massivo */
+@keyframes fall {
+    from {
+        transform: translateY(-150vh);
+    }
+    to {
+        transform: translateY(150vh);
+    }
+}
+
+/* --- partículas MASSIVAS --- */
+/* 1. Contentor de Fundo (Estrutura inalterada) */
+.glitter-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; 
+    overflow: hidden; 
+}
+
+/* 2. Geração e Estilo das Partículas - MUITO MAIS PARTICULAS */
+.glitter-background::before,
+.glitter-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5px;     /* tamanho aumentado */
+    height: 2.5px;    /* tamanho aumentado */
+    background: transparent; 
+
+    /* Partículas MUITO MAIS visíveis e densas */
+    box-shadow:
+        100px 100px rgba(192,208,255,0.6),
+        150px 300px rgba(160,192,255,0.5),
+        400px 50px rgba(136,170,255,0.8),
+        300px 700px rgba(102,204,255,0.5),
+        600px 200px rgba(192,208,255,0.6),
+        750px 500px rgba(160,192,255,0.5),
+        900px 900px rgba(136,170,255,0.8),
+        1000px 400px rgba(102,204,255,0.5),
+        100px 550px rgba(192,208,255,0.6),
+        850px 150px rgba(160,192,255,0.5),
+        250px 10px rgba(192,208,255,0.6),
+        50px 800px rgba(160,192,255,0.5),
+        1100px 250px rgba(136,170,255,0.8),
+        500px 950px rgba(102,204,255,0.5),
+        10px 10px rgba(192,208,255,0.6),
+        700px 300px rgba(160,192,255,0.5),
+        150px 200px rgba(136,170,255,0.8),
+        350px 600px rgba(102,204,255,0.5),
+        950px 800px rgba(192,208,255,0.6),
+        /* duplicando várias vezes para 5× quantidade */
+        120px 400px rgba(192,208,255,0.6),
+        220px 600px rgba(160,192,255,0.5),
+        320px 150px rgba(136,170,255,0.8),
+        420px 800px rgba(102,204,255,0.5),
+        520px 300px rgba(192,208,255,0.6),
+        620px 900px rgba(160,192,255,0.5),
+        720px 500px rgba(136,170,255,0.8),
+        820px 200px rgba(102,204,255,0.5),
+        920px 650px rgba(192,208,255,0.6),
+        1020px 100px rgba(160,192,255,0.5),
+        1120px 450px rgba(136,170,255,0.8),
+        1220px 750px rgba(102,204,255,0.5),
+        1320px 350px rgba(192,208,255,0.6),
+        1420px 950px rgba(160,192,255,0.5),
+        1520px 50px rgba(136,170,255,0.8),
+        1620px 250px rgba(102,204,255,0.5),
+        1720px 600px rgba(192,208,255,0.6),
+        1820px 400px rgba(160,192,255,0.5),
+        1920px 700px rgba(136,170,255,0.8),
+        2020px 150px rgba(102,204,255,0.5);
+        
+    animation: fall 20s linear infinite; 
+}
+
+/* 3. Segundo conjunto de partículas */
+.glitter-background::after {
+    left: 10%; 
+    box-shadow:
+        100px 800px rgba(160,192,255,0.5),
+        500px 100px rgba(136,170,255,0.8),
+        800px 600px rgba(192,208,255,0.6),
+        250px 50px rgba(102,204,255,0.5),
+        450px 350px rgba(160,192,255,0.5),
+        700px 850px rgba(136,170,255,0.8),
+        950px 150px rgba(102,204,255,0.5),
+        1200px 750px rgba(192,208,255,0.6),
+        300px 100px rgba(160,192,255,0.5),
+        700px 400px rgba(192,208,255,0.6),
+        100px 50px rgba(160,192,255,0.5),
+        650px 750px rgba(136,170,255,0.8),
+        10px 500px rgba(192,208,255,0.6),
+        800px 250px rgba(102,204,255,0.5),
+        200px 900px rgba(160,192,255,0.5),
+        /* multiplicadas várias vezes para densidade 5× */
+        150px 600px rgba(192,208,255,0.6),
+        250px 400px rgba(160,192,255,0.5),
+        350px 750px rgba(136,170,255,0.8),
+        450px 950px rgba(102,204,255,0.5),
+        550px 150px rgba(192,208,255,0.6),
+        650px 350px rgba(160,192,255,0.5),
+        750px 800px rgba(136,170,255,0.8),
+        850px 200px rgba(102,204,255,0.5),
+        950px 600px rgba(192,208,255,0.6),
+        1050px 400px rgba(160,192,255,0.5),
+        1150px 900px rgba(136,170,255,0.8),
+        1250px 100px rgba(102,204,255,0.5),
+        1350px 650px rgba(192,208,255,0.6),
+        1450px 850px rgba(160,192,255,0.5),
+        1550px 300px rgba(136,170,255,0.8),
+        1650px 500px rgba(102,204,255,0.5);
+
+    animation-delay: -10s; 
+    animation-duration: 25s; 
+}
+
+/* 4. Definição da Animação de Queda (Inalterada) */
+@keyframes fall {
+    from {
+        transform: translateY(-100vh); 
+    }
+    to {
+        transform: translateY(100vh); 
+    }
+}

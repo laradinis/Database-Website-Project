@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes</title>
+    <link rel="stylesheet" href="/static/disney.css">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/" class="btn-outline">Início</a>
+</div>
+
+<div class="container">
+    <h1>🪄 Detalhes do registo</h1>
+
+    <div class="card">
+        {% for key, value in record.items() %}
+            <p><strong>{{key}}:</strong> {{value}}</p>
+        {% endfor %}
+    </div>
+
+    <a href="/{{table}}/" class="btn">Voltar à lista</a>
+
+</div>
+</body>
+</html>
