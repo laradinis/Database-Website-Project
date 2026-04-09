@@ -30,8 +30,6 @@ Logical Level: Converted into a Relational Model to ensure data integrity and no
 
 
 ## How to Run
-Clone the repository: git clone https://github.com/your-username/disney-plus-db.git
-
 Install dependencies: pip install flask
 
 Run the application
